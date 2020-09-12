@@ -37,3 +37,15 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# Manuscript docs
+*.doc
+*.docx
+*.odt
+/manuscript/
+
+# Data
+/data/
+*.csv
+*.7z
+
