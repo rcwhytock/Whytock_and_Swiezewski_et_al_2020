@@ -30,13 +30,13 @@ species <-
     "Chimpanzee")
 
 # Load the activity .csv
-LopeIvindo <- read.csv("../data/camStations_LopeIvindo_2020-05-06.csv")
+LopeIvindo <- read.csv("../data/publicData/camStations_LopeIvindo_2020-05-06_public.csv")
 LopeIvindo$study <- "LopeIvindo"
 
-MoukalabaMayumba <- read.csv("../data/camStations_MoukalabaMayumba_2020-06-24.csv")
+MoukalabaMayumba <- read.csv("../data/publicData/camStations_MoukalabaMayumba_2020-06-24_public.csv")
 MoukalabaMayumba$study <- "MoukalabaMayumba"
 
-LoangoMoukalaba <- read.csv("../data/camStations_LoangoMoukal_2020-06-24.csv")
+LoangoMoukalaba <- read.csv("../data/publicData/camStations_LoangoMoukal_2020-06-24_public.csv")
 LoangoMoukalaba$study <- "LoangoMoukalaba"
 
 allDatActive <- do.call("rbind", list(LopeIvindo, MoukalabaMayumba, LoangoMoukalaba))
@@ -266,5 +266,3 @@ mtext("Occupancy expert labels",
       outer = TRUE)
 
 dev.off()
-
-# Notes - we want precision to be high as possible to minimise false positives, but also the F1 score probably also useful
