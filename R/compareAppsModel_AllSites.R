@@ -17,6 +17,10 @@ head(mergeLabels_subset_LopeIvindo)
 head(mergeLabels_subset_MoukalabaMayumba)
 head(mergeLabels_subset_LoangoMoukalaba)
 
+mergeLabels_subset_LopeIvindo <- mergeLabels_subset_LopeIvindo[,-1]
+mergeLabels_subset_MoukalabaMayumba <- mergeLabels_subset_MoukalabaMayumba[,-1]
+mergeLabels_subset_LoangoMoukalaba <- mergeLabels_subset_LoangoMoukalaba[,-1]
+
 names(mergeLabels_subset_LopeIvindo)
 extractCols <- names(mergeLabels_subset_LopeIvindo)[c(1,3:36,38:51)]
 mergeLabels_subset_LopeIvindo <- mergeLabels_subset_LopeIvindo[,which(names(mergeLabels_subset_LopeIvindo) %in% extractCols)]
@@ -53,7 +57,7 @@ levels(mergeLabels_subset$topLabel)
 levels(mergeLabels_subset$Species_Appsilon)
 
 mergeLabels_subset <- droplevels(mergeLabels_subset)
-levels(mergeLabels_subset$Species_Appsilon) <- c(levels(mergeLabels_subset$Species_Appsilon), missingTopLabel)
+levels(mergeLabels_subset$Species_Appsilon) <- c(levels(mergeLabels_subset$Species_Appsilon), missingTopLabel) # ignore this
 
 mergeLabels_subset$topLabel <- fct_relevel(mergeLabels_subset$topLabel, sort)
 mergeLabels_subset$Species_Appsilon <- fct_relevel(mergeLabels_subset$Species_Appsilon, sort)
